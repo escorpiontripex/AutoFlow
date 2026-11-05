@@ -1,0 +1,33 @@
+---
+# Playbook principal: aplica todos los roles según el grupo de inventario
+- name: Seguridad base y firewall en todos los servidores
+  hosts: all
+  become: true
+  roles:
+    - seguridad
+    - firewall
+
+- name: DNS
+  hosts: dns
+  become: true
+  roles:
+    - dns
+
+- name: Servicios web
+  hosts: web
+  become: true
+  roles:
+    - servicios_web
+
+- name: Base de datos
+  hosts: db
+  become: true
+  roles:
+    - base_datos
+
+- name: Monitorización y copias de seguridad
+  hosts: all
+  become: true
+  roles:
+    - monitorizacion
+    - backups

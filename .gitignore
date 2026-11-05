@@ -1,0 +1,9 @@
+# Secretos y temporales: nunca al repositorio
+.vault_pass
+*.tfstate
+*.tfstate.*
+.terraform/
+*.retry
+*.pem
+id_*
+!id_*.pub
